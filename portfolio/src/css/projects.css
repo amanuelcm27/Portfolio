@@ -1,0 +1,11 @@
+.project-btn {
+    background-color: transparent;
+    background-image: url("ocean.png");
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1.5s ease;
+}
+.project-btn:hover {
+    background-position: center;
+    color:white;
+}
