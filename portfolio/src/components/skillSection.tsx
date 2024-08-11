@@ -2,7 +2,7 @@ import "../css/skill.css"
 const Skill = () => {
     return (
         <>
-            <div className="flex ml-14">
+            <div id="skills" className="flex ml-14">
                 <span className="font-extrabold text-4xl lg:text-7xl">Skills</span>
             </div>
             <div className="flex w-full h-auto ">

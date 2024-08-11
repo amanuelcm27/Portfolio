@@ -94,6 +94,16 @@
   transform: translateX(-50%);
   z-index: 1000;
 }
+@media (max-width:640px) {
+  .slider {
+    height:400px;
+  }
+}
+@media (min-width:640px) and ( max-width:1024px) {
+  .slider {
+    height:500px;
+  }
+}
 .slider-nav a {
   width: 0.5rem;
   height: 0.5rem;

@@ -2,7 +2,7 @@ import { useState } from "react"
 import "../css/header.css"
 const Header = () => {
     return (
-        <div className="header flex flex-col  justify-center min-w-full h-screen">
+        <div id="home" className="header flex flex-col  justify-center min-w-full h-screen">
 
             <div className="flex h-full bg-pic sm:bg-none sm:h-9/10 sm:m-9">
 

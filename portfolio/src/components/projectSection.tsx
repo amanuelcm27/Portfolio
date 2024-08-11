@@ -3,7 +3,7 @@ import "../css/projects.css"
 const Projects = () => {
 
     return (
-        <div className="flex flex-col min-w-full  h-auto">
+        <div id="projects" className="flex flex-col min-w-full  h-auto">
             <div className="flex flex-col sm:h-9/10 m-9">
                 <div className="flex flex-col lg:p-10 font-extrabold text-4xl lg:text-7xl 2xl:text-9xl  w-full ">
                     <span>Projects</span>
