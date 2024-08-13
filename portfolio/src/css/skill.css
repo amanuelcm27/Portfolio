@@ -8,8 +8,10 @@
   width: 100%;
   animation: movedown 1s linear forwards;
   opacity: 0;
+  
 
 }
+
 .box {
   position: relative;
   border-radius: 6px;
@@ -36,12 +38,19 @@
   position: absolute;
   width: 6px;
   height: 100%;
-  background: rgb(255, 255, 255);
   top: 0;
   left: 0%;
   margin-right: -3px;
   z-index: 2;
-  animation: moveline 6s linear forwards;
+  animation: moveline 6s linear  forwards ;
+}
+
+.timeline.light::after {
+  background: rgb(255, 255, 255);
+}
+
+.timeline.dark::after {
+  background: rgb(0, 0, 0);
 }
 @keyframes moveline {
   0% {
@@ -72,10 +81,10 @@
   }
 }
 .container:nth-child(1) {
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 .container:nth-child(2) {
-  animation-delay: 3s;
+  animation-delay: 2s;
 }
 .container:nth-child(3) {
   animation-delay: 4s;

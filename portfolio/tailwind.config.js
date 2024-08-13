@@ -31,6 +31,7 @@ export default {
       colors: {
         'light':"#d1d5db",
         'silver': '#111827',
+        'dark':"#292929",
       }
     },
   },

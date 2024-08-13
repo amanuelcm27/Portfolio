@@ -1,15 +1,18 @@
 import "../css/skill.css"
-const Skill = () => {
+interface skillProps {
+    mode: boolean
+}
+const Skill: React.FC<skillProps> = ({ mode }) => {
     return (
         <>
-            <div id="skills" className="flex ml-14">
+            <div id="skills" className="flex ml-14 hid">
                 <span className="font-extrabold text-4xl lg:text-7xl">Skills</span>
             </div>
-            <div className="flex w-full h-auto ">
-                
-                <div className="timeline m-5 sm:m-20">
+            <div className="flex w-full h-auto hid ">
+                {mode}
+                <div className={`timeline ${mode ? "light" : "dark"} m-5 sm:m-20`}>
                     <div className="container rounded-md">
-                        <div className="circle bg-white"></div>
+                        <div className={`circle ${mode ? 'bg-white' : 'bg-black'}`}></div>
                         <div className="box text-sm flex flex-col">
                             <span className="text-2xl font-extrabold">Front-End Technologies</span>
                             <div className="flex flex-wrap ml-auto">
@@ -23,7 +26,8 @@ const Skill = () => {
                         </div>
                     </div>
                     <div className="container rounded-md">
-                        <div className="circle bg-white"></div>
+                        <div className={`circle ${mode ? 'bg-white' : 'bg-black'}`}></div>
+
                         <div className="box text-sm flex flex-col">
                             <span className="text-2xl font-extrabold">Back-End Technologies</span>
                             <div className="flex ml-auto">
@@ -34,7 +38,8 @@ const Skill = () => {
                         </div>
                     </div>
                     <div className="container rounded-md">
-                        <div className="circle bg-white"></div>
+                        <div className={`circle ${mode ? 'bg-white' : 'bg-black'}`}></div>
+
                         <div className="box text-sm flex flex-col">
                             <span className="text-2xl font-extrabold">Development Technologies</span>
                             <div className="flex ml-auto">

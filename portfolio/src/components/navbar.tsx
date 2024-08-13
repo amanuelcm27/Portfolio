@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
-
-const Navbar = () => {
+import "../css/nav.css"
+interface NavbarProps {
+  mode: string;
+  setMode: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const Navbar: React.FC<NavbarProps> = ({ mode, setMode }) => {
   const [showNavbar, setShowNavbar] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(window.scrollY);
   const [showDropDown, setShowDropDown] = useState(false)
@@ -30,18 +34,17 @@ const Navbar = () => {
       {menuItems.map((item) => (
         <li
           onClick={() => setShowDropDown(false)}
-
-          key={item.href} className="hover:cursor-pointer hover:bg-black hover:text-white rounded-full p-4">
+          key={item.href} className={`hover:cursor-pointer p-4 ${mode ? ' hover:bg-black hover:text-white' : ' hover:bg-white hover:text-black'}`}>
           <a href={item.href}>{item.label}</a>
         </li>
       ))}
+      
     </ul>
   );
-
   return (
-    <div className="fixed w-full flex flex-col z-10">
+    <div className="fixed w-full flex flex-col z-20">
       <div
-        className={`navbar bg-white text-black w-full h-12 sm:h-20 flex items-center shadow-lg transition-transform duration-300 ${showNavbar ? 'transform translate-y-0' : 'transform -translate-y-full'
+        className={`navbar ${mode ? 'bg-white text-black' : 'bg-black text-white'} w-full h-12 sm:h-20 flex items-center shadow-lg transition-transform duration-300 ${showNavbar ? 'transform translate-y-0' : 'transform -translate-y-full'
           }`}
       >
         <span className="text-4xl italic font-extrabold p-6 block sm:hidden">
@@ -64,6 +67,14 @@ const Navbar = () => {
         }`}>
         {renderMenuItems(true)}
       </div>}
+      <div className='relative'>
+        <div className={`absolute  flex  flex-col items-center bg-transparent  right-5 rounded-t-none rounded-full'  transition-transform duration-300 ${showNavbar ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
+          <span className={`cord w-3 h-32 ${mode ? 'bg-white':'bg-black'} rounded-b-lg`}>
+          </span>
+            <i  onClick={() => setMode(!mode)}  title={`${mode ? 'light mode':"dark mode"}`} className="swinger hover:cursor-pointer fa-solid fa-lightbulb text-4xl bg-none"></i>
+
+        </div>
+      </div>
     </div>
   );
 };
