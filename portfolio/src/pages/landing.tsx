@@ -25,9 +25,9 @@ const Landing = () => {
         hiddenElements.forEach((element) => observer.observe(element));
     }, [])
     return (
-        <div className={`${mode? 'main-container':'main-container-light' }`}>  <Navbar mode={mode} setMode={setMode} />
+        <div className={`${mode? 'main-container':'main-container-light' } relative`}>  <Navbar mode={mode} setMode={setMode} />
             <Header mode={mode}/>
-            <About mode={mode}/>
+            <About />
             <Skill mode={mode}/>
             <Projects mode={mode}/>
             <GroupedSection mode={mode}/>

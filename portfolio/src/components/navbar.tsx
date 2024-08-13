@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import "../css/nav.css"
 interface NavbarProps {
-  mode: string;
+  mode: boolean;
   setMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const Navbar: React.FC<NavbarProps> = ({ mode, setMode }) => {
