@@ -8,6 +8,8 @@ const GroupedSection: React.FC<groupedProps> = ({ mode }) => {
     const sliderRef = useRef<HTMLDivElement | null>(null);
     const [choice, setChoice] = useState("hob")
     const [showCert, setShowCert] = useState(false);
+    const [img, setImg] = useState("am.jpg")
+    const [index,setIndex] = useState(0);
     const handleImageSlide = (slideId: string) => {
         const targetElement = document.getElementById(slideId);
         if (targetElement && sliderRef.current) {
@@ -18,6 +20,13 @@ const GroupedSection: React.FC<groupedProps> = ({ mode }) => {
             });
         }
     };
+    const fetchNewImage =  () => {
+        const images = [ 'am.jpg','person.png' ,'cord.png', 'cert.jpg' ]
+        const newIndex = (index + 1) % images.length;
+        setIndex(newIndex);
+        setImg(images[newIndex]);
+    }
+
     const modalRef = useRef<HTMLDivElement | null>(null);
     const getButtonClass = (item: string) => {
         const isSelected = choice === item;
@@ -82,18 +91,18 @@ const GroupedSection: React.FC<groupedProps> = ({ mode }) => {
                             <div className="fixed w-full h-screen z-20 backdrop-blur-md top-0 left-0 flex flex-col justify-center gap-1 items-center">
                     
                                 <div ref={modalRef} className={`sm:w-8/10 sm:h-8/10 scale`}>
-                                    <img className="w-full h-full object-contain sm:object-fill rounded-md" src="cert.jpg"></img>
+                                    <img className="w-full h-full object-contain sm:object-fill rounded-md" src={img}></img>
                                 </div>
                             </div>}
                         <div className="w-9/10 h-full group">
                        
                             <div onClick={() => setShowCert(true)} className="cert-slide w-full h-full hover:cursor-pointer">
-                                <img className="object-fill w-full h-8/10 sm:h-500px " src="cert.jpg"></img>
+                                <img className="object-fill w-full h-8/10 sm:h-500px " src={img}></img>
                             </div>
                         </div>
 
-                        <div className="flex flex-col justify-center items-center w-1/10 h-8/10 sm:h-500px text-4xl  bg-white  backdrop-blur-lg text-black hover:bg-light hover:cursor-pointer ">
-                            <i className=" fa-solid fa-angle-right"></i>
+                        <div onClick={fetchNewImage} className="flex flex-col justify-center items-center w-1/10 h-8/10 sm:h-500px text-4xl  bg-white   text-black hover:bg-light hover:cursor-pointer ">
+                            <i   className=" fa-solid fa-angle-right"></i>
                         </div>
                     </div>}
                     {choice === "blog" && <div className=" flex bg-silver h-full flex-col justify-center items-center rounded-xl ">
