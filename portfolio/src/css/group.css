@@ -76,9 +76,8 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  border-radius: 20px;
 }
-.slider img {
+.vid {
   flex: 1 0 100%;
   object-fit: cover;
   scroll-snap-align: start;
@@ -103,9 +102,8 @@
   }
 }
 .slider-nav a {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
+  width: 5rem;
+  height: 1rem;
   background-color: #ffffff;
   opacity: 0.5;
   transition: opacity ease-in 250ms;

@@ -20,6 +20,9 @@ export default {
         'custom-lg': '0 0 60px #0345fc',
         
       },
+      screens : {
+        '2k':'2560px'
+      },
       width: {
         '4k':'42rem',
         '9/10': '90%', 

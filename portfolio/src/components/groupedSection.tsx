@@ -8,8 +8,8 @@ const GroupedSection: React.FC<groupedProps> = ({ mode }) => {
     const sliderRef = useRef<HTMLDivElement | null>(null);
     const [choice, setChoice] = useState("hob")
     const [showCert, setShowCert] = useState(false);
-    const [img, setImg] = useState("am.jpg")
-    const [index,setIndex] = useState(0);
+    const [img, setImg] = useState("cert1.png")
+    const [index, setIndex] = useState(0);
     const handleImageSlide = (slideId: string) => {
         const targetElement = document.getElementById(slideId);
         if (targetElement && sliderRef.current) {
@@ -20,8 +20,8 @@ const GroupedSection: React.FC<groupedProps> = ({ mode }) => {
             });
         }
     };
-    const fetchNewImage =  () => {
-        const images = [ 'am.jpg','person.png' ,'cord.png', 'cert.jpg' ]
+    const fetchNewImage = () => {
+        const images = ['cert1.png', 'cert2.png']
         const newIndex = (index + 1) % images.length;
         setIndex(newIndex);
         setImg(images[newIndex]);
@@ -72,12 +72,33 @@ const GroupedSection: React.FC<groupedProps> = ({ mode }) => {
                         <span className="flex items-center reveal reveal-3"><i className="p-4 m-4 fa-solid fa-graduation-cap"></i> Expected Graduation 2026</span>
                         <span className="flex items-center reveal reveal-4"><i className="p-4 m-4 fa-solid fa-hashtag"></i> GPA: 3.8</span>
                     </div>}
-                    {choice === "hob" && <div className="w-full rounded-lg relative">
-                        <div className="slider-wrapper  mb-1 ">
-                            <div className="slider  duration-300 ease-in  hover:shadow-custom-lg" ref={sliderRef}>
-                                <img id="slide-1" src="am.jpg" alt="movies"></img>
-                                <img id="slide-2" src="ocean.png" alt="my games"></img>
-                                <img id="slide-3" src="am.jpg" alt="my books"></img>
+                    {choice === "hob" && <div className="w-full relative">
+                        <div className="slider-wrapper  mb-1  ">
+                            <div className="slider  duration-300 ease-in  hover:shadow-custom-lg  " ref={sliderRef}>
+                                <div id="slide-1" className="vid   relative">
+                                    <div className=" absolute w-full h-full flex flex-col justify-center items-center  z-10 bg-black opacity-70 ">
+                                        <div className="flex flex-col-reverse ">
+                                            <span className="text-white sm:text-6xl sm:font-bold text-2xl">Games</span>
+                                        </div>
+                                    </div>
+                                    <video className="w-full h-full object-cover" src="vids/games.mp4" loop muted autoPlay ></video>
+                                </div>
+                                <div id="slide-2" className="vid relative">
+                                    <div className=" absolute w-full h-full flex flex-col justify-center items-center   z-10 bg-black opacity-70 ">
+                                        <div className="flex flex-col-reverse ">
+                                            <span className="text-white sm:text-6xl sm:font-bold text-2xl">Movies</span>
+                                        </div>
+                                    </div>
+                                    <video  className="w-full h-full object-cover" src="vids/movies.mp4" loop muted autoPlay  ></video>
+                                </div>
+                                <div id="slide-3" className="vid relative">
+                                    <div className=" absolute w-full h-full flex flex-col justify-center items-center   z-10 bg-black opacity-70 ">
+                                        <div className="flex flex-col-reverse ">
+                                            <span className="text-white sm:text-6xl sm:font-bold text-2xl">Non-Fiction Books</span>
+                                        </div>
+                                    </div>
+                                    <video className="w-full h-full object-cover" src="vids/book.mp4" loop muted autoPlay ></video>
+                                </div>
                             </div>
                             <div className="slider-nav">
                                 <a href="#slide-1" onClick={(e) => { e.preventDefault(); handleImageSlide('slide-1'); }}></a>
@@ -89,20 +110,20 @@ const GroupedSection: React.FC<groupedProps> = ({ mode }) => {
                     {choice === "cert" && <div className="relative flex w-full h-full ">
                         {showCert &&
                             <div className="fixed w-full h-screen z-20 backdrop-blur-md top-0 left-0 flex flex-col justify-center gap-1 items-center">
-                    
+
                                 <div ref={modalRef} className={`sm:w-8/10 sm:h-8/10 scale`}>
                                     <img className="w-full h-full object-contain sm:object-fill rounded-md" src={img}></img>
                                 </div>
                             </div>}
                         <div className="w-9/10 h-full group">
-                       
+
                             <div onClick={() => setShowCert(true)} className="cert-slide w-full h-full hover:cursor-pointer">
                                 <img className="object-fill w-full h-8/10 sm:h-500px " src={img}></img>
                             </div>
                         </div>
 
                         <div onClick={fetchNewImage} className="flex flex-col justify-center items-center w-1/10 h-8/10 sm:h-500px text-4xl  bg-white   text-black hover:bg-light hover:cursor-pointer ">
-                            <i   className=" fa-solid fa-angle-right"></i>
+                            <i className=" fa-solid fa-angle-right"></i>
                         </div>
                     </div>}
                     {choice === "blog" && <div className=" flex bg-silver h-full flex-col justify-center items-center rounded-xl ">

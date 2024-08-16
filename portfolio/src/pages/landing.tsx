@@ -11,7 +11,7 @@ import Footer from "../components/footer";
 
 
 const Landing = () => {
-    const [mode, setMode] = useState<boolean>(true); // mode true = Dark Mode
+    const [mode, setMode] = useState<boolean>(false); // mode true = Dark Mode
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -25,7 +25,7 @@ const Landing = () => {
         hiddenElements.forEach((element) => observer.observe(element));
     }, [])
     return (
-        <div className={`${mode? 'main-container':'main-container-light' } relative`}>  <Navbar mode={mode} setMode={setMode} />
+        <div className={`${mode? 'main-container':'main-container-light' }`}>  <Navbar mode={mode} setMode={setMode} />
             <Header mode={mode}/>
             <About />
             <Skill mode={mode}/>

@@ -7,16 +7,16 @@ const Projects: React.FC<projectsProps> = ({ mode }) => {
     const projects = [
         {
             "name": 'Finese', "description":
-                'A Finanical tracking website where you can add your daily expense ,set saving goals and track your progress',
-            'img': "person.png", 'url': 'https://finese.vercel.app'
+                'A Finanical tracking website where you can add your daily expense ,set saving goals , track your progress and filter your expenses based on monthly or yearly and track your achivements and  get suggestions based on your monthly expenses to meet your goals',
+            'vid': "vids/finese.mp4", 'url': 'https://finese.vercel.app'
         }, {
             "name": 'CampusSync', "description":
                 'An Event Sharing Platform where unviersity communities can share upcoming events , RSVP for events and have discussion on events to get timely information  ',
-            'img': "test.gif", 'url': 'https://campussync.vercel.app'
+            'vid': "vids/campus.mp4", 'url': 'https://campussync.vercel.app'
         }, {
             "name": 'Journey', "description":
-                'A personal game collection website where users can store games they have played, store games they wish to play in the future and add there opinions on each game they play',
-            'img': "giify.gif", 'url': 'https://journeysofaman.vercel.app'
+                'A personal game collection website where users can store games they have played, store games they wish to play in the future and add there opinions on each game they play. It is gallery for your memories ',
+            'vid': "vids/journey.mp4", 'url': 'https://journeysofaman.vercel.app'
         },]
     const [project, setProject] = useState(projects[0])
     const [index, setIndex] = useState(0)
@@ -31,18 +31,18 @@ const Projects: React.FC<projectsProps> = ({ mode }) => {
     return (
         <div id="projects" className="flex flex-col min-w-full  h-auto hid">
             <div className="flex flex-col sm:h-9/10 m-9">
-                <div className="flex flex-col lg:p-10 font-extrabold text-4xl lg:text-7xl 2xl:text-9xl  w-full ">
+                <div className="flex flex-col lg:p-10 font-extrabold text-4xl lg:text-7xl 2k:text-9xl  w-full ">
                     <span>Projects</span>
                 </div>
                 <div className={`w-full sm:h-500px mt-5 sm:m-3 sm:flex ${mode ? 'bg-white text-black' : 'bg-black text-white'} rounded-lg p-4`}>
                     <div className="sm:flex flex-col w-1/2 m-3">
-                        <span className="md:p-4 font-extrabold text-2xl lg:text-4xl 2xl:text-9xl slidein" >{project.name}</span>
-                        <span className="hidden sm:block p-5  font-normal text-base md:text-md lg:text-lg 2xl:text-4xl text-justify  hyphens-auto leading-relaxed overflow-y-auto">
+                        <span className="md:p-4 font-extrabold text-2xl lg:text-4xl 2k:text-9xl slidein" >{project.name}</span>
+                        <span className="hidden sm:block p-5  font-normal text-base md:text-md lg:text-lg 2k:text-4xl text-justify  hyphens-auto leading-relaxed overflow-y-auto">
                             <span className="reveal reveal-1">
                                 {project.description}
                             </span>
                         </span>
-                        <div className="p-5 hidden sm:block">
+                        <div className="p-5 mt-auto hidden sm:block">
                             <button onClick={() => fetchNewProject('prev')} className="p-4 border-2 border-r-0 project-btn">
                                 <i className="fa-solid fa-angle-left"></i>
                             </button>
@@ -58,7 +58,7 @@ const Projects: React.FC<projectsProps> = ({ mode }) => {
                             </div>
                         </div>
                         <a href={project.url} className=" block ">
-                            <img src={project.img} className="w-full sm:h-full" ></img>
+                            <video src={project.vid} autoPlay muted loop className="w-full sm:h-full" ></video>
                         </a>
                     </div>
                     <div className="p-2 sm:hidden">
