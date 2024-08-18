@@ -11,8 +11,9 @@ const Navbar: React.FC<NavbarProps> = ({ mode, setMode }) => {
   const menuItems = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
-    { label: 'Projects', href: '#projects' },
     { label: 'Skills', href: '#skills' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Services', href: '#service' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -32,11 +33,13 @@ const Navbar: React.FC<NavbarProps> = ({ mode, setMode }) => {
   const renderMenuItems = (isMobile = false) => (
     <ul className={`list-none ${isMobile ? 'flex flex-col m-3' : 'flex'} font-bold`}>
       {menuItems.map((item) => (
+        <a href={item.href}>
         <li
           onClick={() => setShowDropDown(false)}
           key={item.href} className={`hover:cursor-pointer p-4 ${mode ? ' hover:bg-black hover:text-white' : ' hover:bg-white hover:text-black'}`}>
-          <a href={item.href}>{item.label}</a>
+          {item.label}
         </li>
+        </a>
       ))}
       
     </ul>

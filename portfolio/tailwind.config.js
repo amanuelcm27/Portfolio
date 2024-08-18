@@ -18,7 +18,6 @@ export default {
       },
       boxShadow: {
         'custom-lg': '0 0 60px #0345fc',
-        
       },
       screens : {
         '2k':'2560px'

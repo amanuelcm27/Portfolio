@@ -74,7 +74,7 @@ const GroupedSection: React.FC<groupedProps> = ({ mode }) => {
                     </div>}
                     {choice === "hob" && <div className="w-full relative">
                         <div className="slider-wrapper  mb-1  ">
-                            <div className="slider  duration-300 ease-in  hover:shadow-custom-lg  " ref={sliderRef}>
+                            <div className="slider  duration-300 ease-in  " ref={sliderRef}>
                                 <div id="slide-1" className="vid   relative">
                                     <div className=" absolute w-full h-full flex flex-col justify-center items-center  z-10 bg-black opacity-70 ">
                                         <div className="flex flex-col-reverse ">

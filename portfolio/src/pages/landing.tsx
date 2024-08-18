@@ -7,11 +7,12 @@ import Projects from "../components/projectSection";
 import GroupedSection from "../components/groupedSection";
 import Contact from "../components/contact";
 import Footer from "../components/footer";
+import Services from "../components/services";
 
 
 
 const Landing = () => {
-    const [mode, setMode] = useState<boolean>(false); // mode true = Dark Mode
+    const [mode, setMode] = useState<boolean>(true); // mode true = Dark Mode
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -30,6 +31,7 @@ const Landing = () => {
             <About />
             <Skill mode={mode}/>
             <Projects mode={mode}/>
+            <Services mode={mode} />
             <GroupedSection mode={mode}/>
             <Contact mode={mode}/>
             <Footer mode={mode}/>
