@@ -13,13 +13,16 @@ import Services from "../components/services";
 
 const Landing = () => {
     const [mode, setMode] = useState<boolean>(true); // mode true = Dark Mode
-
+    const [skillActive, setSkillActive] = useState(false);
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("show");
-                }
+                    if (entry.target.classList.contains("skills")) {
+                        setSkillActive(true);
+                    }
+                }           
             });
         });
         const hiddenElements = document.querySelectorAll(".hid");
@@ -29,7 +32,7 @@ const Landing = () => {
         <div className={`${mode? 'main-container':'main-container-light' }`}>  <Navbar mode={mode} setMode={setMode} />
             <Header mode={mode}/>
             <About />
-            <Skill mode={mode}/>
+            <Skill skillActive={skillActive} mode={mode}/>
             <Projects mode={mode}/>
             <Services mode={mode} />
             <GroupedSection mode={mode}/>

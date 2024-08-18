@@ -20,6 +20,7 @@ const Projects: React.FC<projectsProps> = ({ mode }) => {
         },]
     const [project, setProject] = useState(projects[0])
     const [index, setIndex] = useState(0)
+    const [rerender, setRender] = useState(true);
     const fetchNewProject = (type: string) => {
         const newIndex = type === 'next' ? (index + 1) % projects.length : ((index == 0 ? projects.length : index) - 1) % projects.length
         setIndex(newIndex);
@@ -35,7 +36,7 @@ const Projects: React.FC<projectsProps> = ({ mode }) => {
                     <span>Projects</span>
                 </div>
                 <div className={`w-full sm:h-500px mt-5 sm:m-3 sm:flex ${mode ? 'bg-white text-black' : 'bg-black text-white'} rounded-lg p-4`}>
-                    <div className="sm:flex flex-col w-1/2 m-3">
+                    <div className="sm:flex flex-col w-1/2 m-3" key={project.name} >
                         <span className="md:p-4 font-extrabold text-2xl lg:text-4xl 2k:text-9xl slidein" >{project.name}</span>
                         <span className="hidden sm:block p-5  font-normal text-base md:text-md lg:text-lg 2k:text-4xl text-justify  hyphens-auto leading-relaxed overflow-y-auto">
                             <span className="reveal reveal-1">
@@ -49,7 +50,7 @@ const Projects: React.FC<projectsProps> = ({ mode }) => {
                             <button onClick={() => fetchNewProject('next')} className="project-btn p-4 border-2 "><i className="fa-solid fa-angle-right"></i></button>
                         </div>
                     </div>
-                    <div className="w-full sm:w-1/2 sm:h-full flex flex-col justify-center  relative group slideimg">
+                    <div className="w-full sm:w-1/2 sm:h-full flex flex-col justify-center  relative group slideimg" key={project.vid}>
                         <div className="absolute w-full h-1/2 sm:w-full sm:h-full rounded-lg z-10 bg-black 
                         opacity-0 sm:group-hover:opacity-80 transition-opacity duration-300 delay-75
                          hover:cursor-pointer ">

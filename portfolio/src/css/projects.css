@@ -11,7 +11,7 @@
 }
 
 .slidein {
-  animation: slideright 1s ease-in-out;
+  animation: slideright .5s ease-in-out;
 }
 .slideimg {
   animation: slideleft 1s ease-in-out;
@@ -29,10 +29,10 @@
 @keyframes slideleft {
     0% {
       opacity: 0.5;
-      transform: translateX(1000px);
+      transform: translateY(1000px);
     }
     100% {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
   }
