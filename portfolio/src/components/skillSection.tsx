@@ -7,7 +7,7 @@ const Skill: React.FC<skillProps> = ({ mode, skillActive }) => {
 
     return (
         <>
-            <div  className="flex ml-14 hid">
+            <div id="skills"  className="flex ml-14 hid">
                 <span className="font-extrabold text-4xl lg:text-7xl">Skills</span>
             </div>
             <div className="skills flex w-full h-auto hid ">

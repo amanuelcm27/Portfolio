@@ -14,7 +14,7 @@
   animation: slideright .5s ease-in-out;
 }
 .slideimg {
-  animation: slideleft 1s ease-in-out;
+  animation: slideToTop 1s ease-in-out;
 }
 @keyframes slideright {
   0% {
@@ -26,9 +26,9 @@
     transform: translateX(0);
   }
 }
-@keyframes slideleft {
+@keyframes slideToTop {
     0% {
-      opacity: 0.5;
+      opacity: 0;
       transform: translateY(1000px);
     }
     100% {

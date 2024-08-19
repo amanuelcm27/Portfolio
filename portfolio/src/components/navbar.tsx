@@ -33,7 +33,7 @@ const Navbar: React.FC<NavbarProps> = ({ mode, setMode }) => {
   const renderMenuItems = (isMobile = false) => (
     <ul className={`list-none ${isMobile ? 'flex flex-col m-3' : 'flex'} font-bold`}>
       {menuItems.map((item) => (
-        <a href={item.href}>
+        <a key={item.href} href={item.href}>
         <li
           onClick={() => setShowDropDown(false)}
           key={item.href} className={`hover:cursor-pointer p-4 ${mode ? ' hover:bg-black hover:text-white' : ' hover:bg-white hover:text-black'}`}>

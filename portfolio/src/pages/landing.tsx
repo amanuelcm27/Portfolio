@@ -10,10 +10,14 @@ import Footer from "../components/footer";
 import Services from "../components/services";
 
 
-
 const Landing = () => {
-    const [mode, setMode] = useState<boolean>(true); // mode true = Dark Mode
+    const [mode, setMode] = useState<boolean>(localStorage.getItem('theme') ? JSON.parse(localStorage.getItem('theme') || '') :true); // mode true = Dark Mode
     const [skillActive, setSkillActive] = useState(false);
+
+
+    useEffect (() => {
+        localStorage.setItem('theme',JSON.stringify(mode));
+    },[mode])
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {

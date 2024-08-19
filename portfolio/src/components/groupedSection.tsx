@@ -68,8 +68,8 @@ const GroupedSection: React.FC<groupedProps> = ({ mode }) => {
                 <div className="w-full h-full">
                     {choice === "edu" && <div className="flex flex-col sm:m-9 sm:p-4 text-md  sm:text-2xl ">
                         <span className="flex items-center reveal reveal-1"><i className="p-4 m-4 fa-solid fa-building-columns "></i> Addis Ababa Science and Technology University</span>
-                        <span className="flex items-center reveal reveal-2"><i className="p-4 m-4  fa-solid fa-table-list"></i> Bachelor of Science in Software Engineering</span>
-                        <span className="flex items-center reveal reveal-3"><i className="p-4 m-4 fa-solid fa-graduation-cap"></i> Expected Graduation 2026</span>
+                        <span className="flex items-center reveal reveal-2"><i className="p-4 m-4 fa-solid fa-table-list"></i> Bachelor of Science in Software Engineering</span>
+                        <span className="flex items-center reveal reveal-3"><i className="p-4 m-4 fa-solid fa-graduation-cap"></i>Graduation 2026</span>
                         <span className="flex items-center reveal reveal-4"><i className="p-4 m-4 fa-solid fa-hashtag"></i> GPA: 3.8</span>
                     </div>}
                     {choice === "hob" && <div className="w-full relative">

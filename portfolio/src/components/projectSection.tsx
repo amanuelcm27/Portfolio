@@ -20,7 +20,6 @@ const Projects: React.FC<projectsProps> = ({ mode }) => {
         },]
     const [project, setProject] = useState(projects[0])
     const [index, setIndex] = useState(0)
-    const [rerender, setRender] = useState(true);
     const fetchNewProject = (type: string) => {
         const newIndex = type === 'next' ? (index + 1) % projects.length : ((index == 0 ? projects.length : index) - 1) % projects.length
         setIndex(newIndex);

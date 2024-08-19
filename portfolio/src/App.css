@@ -10,13 +10,13 @@ a {
     flex-direction: column; */
   background-color: black;
   color: white;
-  transition: all 0.5s, color 0.1s;
+  transition: all 0.2s, color 0.1s;
 }
 
 .main-container-light {
     background-color: rgb(255, 255, 255);
     color:rgb(0, 0, 0);
-    transition: all 0.5s, color 0.1s;
+    transition: all 0.2s, color 0.1s;
 
 }
 @media (max-width: 640px) {
