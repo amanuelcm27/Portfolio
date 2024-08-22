@@ -16,7 +16,7 @@ const Services: React.FC<serviceProps> = ({ mode }) => {
                     <div className={`flex flex-col  p-5`}>
                         <i className="text-xl fa-solid fa-desktop"></i>
                         <span className="text-xl font-bold">Front-End Development</span>
-                        <span className="text-xl pt-3  ">Creating responsive and interactive user interfaces using technologies like HTML, CSS, JavaScript, and frameworks like React </span>
+                        <span className="text-xl pt-3  ">Creating responsive and interactive user interfaces using technologies like HTML, CSS, JavaScript, and frameworks like React. </span>
                         <span className="mt-auto text-blue-500 transition-all duration-200 ease-in hover:translate-x-1 hover:cursor-pointer "><a href="#contact">Order Now</a> <i className="fa-solid fa-angle-right"></i> </span>
                     </div>
                 </div>
@@ -25,7 +25,7 @@ const Services: React.FC<serviceProps> = ({ mode }) => {
                         <i className=" text-xl fa-solid fa-server"></i>
                         <span className="text-xl font-bold">Back-End Development</span>
                         <span className="text-xl pt-3   ">
-                            Build the server side infrastructure for your website to store and manage data using technologies like python and its framework Django
+                            Build the server side infrastructure for your website to store and manage data using technologies like python and its framework Django.
                         </span>
                         <span className="mt-auto text-blue-500 transition-all duration-200 ease-in hover:translate-x-1 hover:cursor-pointer "><a href="#contact">Order Now</a> <i className="fa-solid fa-angle-right"></i> </span>
                     </div>
@@ -35,7 +35,7 @@ const Services: React.FC<serviceProps> = ({ mode }) => {
                         <i className="text-xl fa-solid fa-database"></i>
                         <span className="text-xl font-bold">Database Management</span>
                         <span className="text-xl pt-3  ">
-                            Designing, implementing, and managing databases to store, retrieve, and manipulate data efficiently with databases like PostgreSQL </span>
+                            Designing, implementing, and managing databases to store, retrieve, and manipulate data efficiently with databases like PostgreSQL. </span>
                         <span className="mt-auto text-blue-500 transition-all duration-200 ease-in hover:translate-x-1 hover:cursor-pointer "><a href="#contact">Order Now</a> <i className="fa-solid fa-angle-right"></i> </span>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ const Services: React.FC<serviceProps> = ({ mode }) => {
                         <i className="text-xl fa-solid fa-link"></i>
                         <span className="text-xl font-bold">API Development and Integration</span>
                         <span className="text-xl pt-3  ">
-                            Creating and integrating APIs that allow different applications to communicate with each other, using tools like RESTful API </span>
+                            Creating and integrating APIs that allow different applications to communicate with each other, using tools like RESTful API. </span>
                         <span className="mt-auto text-blue-500 transition-all duration-200 ease-in hover:translate-x-1 hover:cursor-pointer "><a href="#contact">Order Now</a> <i className="fa-solid fa-angle-right"></i> </span>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ const Services: React.FC<serviceProps> = ({ mode }) => {
                         <i className=" text-xl fa-solid fa-paint-roller"></i>
                         <span className="text-xl font-bold">UI/UX Design </span>
                         <span className="text-xl pt-3 ">
-                            Design exceptional user interfaces for engaging user experience using tools like Figma
+                            Design exceptional user interfaces for engaging user experience using tools like Figma.
                         </span>
                         <span className="mt-auto text-blue-500 transition-all duration-200 ease-in hover:translate-x-1 hover:cursor-pointer "><a href="#contact">Order Now</a> <i className="fa-solid fa-angle-right"></i> </span>
                     </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import '../css/about.css'
 const About = () => {
-    const images = ['am.jpg', 'person.png', 'cord.png', 'cert.jpg'];
+    const images = ['p3.JPG', 'p4.JPG', 'p5.JPG', 'p1.JPG',];
     const [img, setImg] = useState(images[0]);
     const [index, setIndex] = useState(0);
     const [slideIn, setSlideIn] = useState(true);
@@ -29,19 +29,23 @@ const About = () => {
     return (
         <div id="about" className="flex sm:flex-col justify-center min-w-full h-screen hid">
             <div className="flex h-fit sm:h-9/10 m-9">
-                <div className="flex flex-col justify-center lg:p-10 font-extrabold text-4xl lg:text-7xl 2k:text-9xl w-full sm:w-1/2">
+                <div className="flex flex-col  lg:p-10 font-extrabold text-4xl lg:text-7xl 2k:text-9xl w-full sm:w-1/2">
                     <span>About Me</span>
-                    <div className="font-normal text-base md:text-md lg:text-lg 2k:text-4xl text-justify pt-6 hyphens-auto leading-relaxed">
+                    <div className="font-normal sm:text-justify text-base md:text-md lg:text-lg 2k:text-4xl pt-6 ">
                         <span>
-                            A motivated and proactive Software Engineering student with a GPA of
-                            3.8, currently seeking opportunities to apply and enhance my skills in
-                            web development and gain practical experience in a professional
-                            setting. Personally, I have worked on projects for competitions and for
-                            my personal skills development. I am aiming to learn from your
-                            company how real-world web-development works and other things that
-                            would help me, and your company achieve our goals.
+                            My name is Amanuel Firew Lema, a dedicated software engineer from Ethiopia with a specialization in website development.
+                            I create full-scale websites, handling both front-end and back-end functionalities. Utilizing modern software development technologies,
+                            I focus on building functional, scalable, and user-friendly websites.
+                            My mission is to empower small to large businesses by developing tools that help their customers achieve their goals and scale their business to success.
+                            Scale your business now !
                         </span>
                     </div>
+                    <div>
+                        <a href="#contact">
+                            <button className=" text-2xl bg-blue-400 text-white p-2 sm:p-4 hover:bg-blue-300 "> Let's Begin </button>
+                        </a>
+                    </div>
+
                 </div>
 
                 <div className="hidden sm:flex flex-col justify-center items-center w-1/2">

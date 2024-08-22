@@ -11,7 +11,7 @@ import Services from "../components/services";
 
 
 const Landing = () => {
-    const [mode, setMode] = useState<boolean>(localStorage.getItem('theme') ? JSON.parse(localStorage.getItem('theme') || '') :true); // mode true = Dark Mode
+    const [mode, setMode] = useState<boolean>(localStorage.getItem('theme') ? JSON.parse(localStorage.getItem('theme') || '') :false); // mode true = Dark Mode
     const [skillActive, setSkillActive] = useState(false);
 
 
