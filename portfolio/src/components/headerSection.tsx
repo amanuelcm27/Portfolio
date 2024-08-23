@@ -44,11 +44,9 @@ const Header: React.FC<HeaderProps> = ({ mode }) => {
                     <span className="lowercase font-light text-sm 2k:text-4xl">i build full scale web application scaling businesses to success</span>
                 </div>
                 <div className="w-1/2 hidden sm:flex">
+        
                     {
-                        mode ?
-                    <img className="w-full mt-2 rounded-full object-cover" src="person2.png" alt="Person" />
-                    :
-                    <img className="w-full mt-2 rounded-full object-cover" src="person.png" alt="Person" />
+                    <img className="w-full mt-2 rounded-full object-cover" src={`${mode ? 'person2.png' :"person.png" }`} alt="Person" />
 
                     }
 

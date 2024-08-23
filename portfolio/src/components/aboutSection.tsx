@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import '../css/about.css'
 const About = () => {
-    const images = ['p3.JPG', 'p4.JPG', 'p5.JPG', 'p1.JPG',];
+    const images = ['p3.JPG', 'p4.JPG', 'p5.JPG', 'p1.JPG'];
     const [img, setImg] = useState(images[0]);
     const [index, setIndex] = useState(0);
     const [slideIn, setSlideIn] = useState(true);
