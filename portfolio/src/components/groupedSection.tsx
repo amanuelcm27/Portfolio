@@ -1,9 +1,11 @@
 import "../css/group.css"
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, Suspense, lazy } from "react";
 
 interface groupedProps {
     mode: boolean
 }
+
+const VideoSlide = lazy(() => import('./VideoSlide'));
 const GroupedSection: React.FC<groupedProps> = ({ mode }) => {
     const sliderRef = useRef<HTMLDivElement | null>(null);
     const [choice, setChoice] = useState("hob")
@@ -75,30 +77,12 @@ const GroupedSection: React.FC<groupedProps> = ({ mode }) => {
                     {choice === "hob" && <div className="w-full relative">
                         <div className="slider-wrapper  mb-1  ">
                             <div className="slider  duration-300 ease-in  " ref={sliderRef}>
-                                <div id="slide-1" className="vid   relative">
-                                    <div className=" absolute w-full h-full flex flex-col justify-center items-center  z-10 bg-black opacity-70 ">
-                                        <div className="flex flex-col-reverse ">
-                                            <span className="text-white sm:text-6xl sm:font-bold text-2xl">Games</span>
-                                        </div>
-                                    </div>
-                                    <video className="w-full h-full object-cover" src="vids/games.mp4" loop muted autoPlay ></video>
-                                </div>
-                                <div id="slide-2" className="vid relative">
-                                    <div className=" absolute w-full h-full flex flex-col justify-center items-center   z-10 bg-black opacity-70 ">
-                                        <div className="flex flex-col-reverse ">
-                                            <span className="text-white sm:text-6xl sm:font-bold text-2xl">Movies</span>
-                                        </div>
-                                    </div>
-                                    <video  className="w-full h-full object-cover" src="vids/movies.mp4" loop muted autoPlay  ></video>
-                                </div>
-                                <div id="slide-3" className="vid relative">
-                                    <div className=" absolute w-full h-full flex flex-col justify-center items-center   z-10 bg-black opacity-70 ">
-                                        <div className="flex flex-col-reverse ">
-                                            <span className="text-white sm:text-6xl sm:font-bold text-2xl">Non-Fiction Books</span>
-                                        </div>
-                                    </div>
-                                    <video className="w-full h-full object-cover" src="vids/book.mp4" loop muted autoPlay ></video>
-                                </div>
+                                <Suspense fallback={<div>Loading videos...</div>}>
+                                    <VideoSlide id='slide-1' src="vids/games.mp4" label="Games" />
+                                    <VideoSlide id='slide-2' src="vids/movies.mp4" label="Movies" />
+                                    <VideoSlide id='slide-3' src="vids/book.mp4" label="Non-Fiction Books" />
+                                </Suspense>
+
                             </div>
                             <div className="slider-nav">
                                 <a href="#slide-1" onClick={(e) => { e.preventDefault(); handleImageSlide('slide-1'); }}></a>
