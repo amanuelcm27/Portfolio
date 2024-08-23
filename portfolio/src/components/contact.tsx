@@ -36,7 +36,7 @@ const Contact: React.FC<contactProps> = ({ mode }) => {
         if (validateForm()) {
             setLoading(true);
             emailjs.send(service_id, template_id, formData, public_key)
-                .then((res) => {
+                .then(() => {
                     setsuccess(true);
                     setFormData({
                         to_name: "amanuel firew",
