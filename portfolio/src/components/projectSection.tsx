@@ -6,6 +6,11 @@ interface projectsProps {
 const Projects: React.FC<projectsProps> = ({ mode }) => {
     const projects = [
         {
+            "name": 'Gulit', "description":
+                'Guilt is an ecommerce website where you can buy and sell products , add products to your cart and checkout with your products. It has a user friendly interface and a secure payment gateway with modern payment system like Chapa integrated.',
+            'vid': "vids/gulit.mp4", 'url': 'https://gulitco.vercel.app'
+        },
+        {
             "name": 'Finese', "description":
                 'A Finanical tracking website where you can add your daily expense ,set saving goals , track your progress and filter your expenses based on monthly or yearly and track your achivements and  get suggestions based on your monthly expenses to meet your goals',
             'vid': "vids/finese.mp4", 'url': 'https://finese.vercel.app'
@@ -25,9 +30,9 @@ const Projects: React.FC<projectsProps> = ({ mode }) => {
         setIndex(newIndex);
         setProject(projects[newIndex]);
     }
-    useEffect(()=>{
+    useEffect(() => {
 
-    },[project])
+    }, [project])
     return (
         <div id="projects" className="flex flex-col min-w-full  h-auto hid">
             <div className="flex flex-col sm:h-9/10 m-9">
